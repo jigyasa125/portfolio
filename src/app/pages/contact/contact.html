@@ -1,0 +1,216 @@
+<section class="contact-section">
+  <div class="container py-5">
+    
+    <!-- Animated Header -->
+    <div class="section-header text-center mb-5" data-aos="fade-down">
+      <span class="section-badge">Let's Connect</span>
+      <h1 class="section-title">Get In Touch</h1>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Ready to start your next project? Let's make it happen together.</p>
+    </div>
+
+    <!-- Main Contact Layout - Dual Panel -->
+    <div class="row g-4 mb-5">
+      
+      <!-- LEFT PANEL - Contact Methods -->
+      <div class="col-lg-5">
+        
+        <!-- Quick Contact Cards -->
+        <div class="quick-contact-grid mb-4" data-aos="fade-right">
+          <div class="quick-contact-card" *ngFor="let info of contactInfo">
+            <div class="qc-icon-wrapper">
+              <i class="bi bi-{{ info.icon }}"></i>
+            </div>
+            <div class="qc-content">
+              <span class="qc-label">{{ info.title }}</span>
+              <a *ngIf="info.link" [href]="info.link" class="qc-value">{{ info.value }}</a>
+              <span *ngIf="!info.link" class="qc-value">{{ info.value }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Connect Panel -->
+        <div class="social-connect-panel mb-4" data-aos="fade-right" data-aos-delay="100">
+          <h3 class="panel-title">
+            <i class="bi bi-share-fill me-2"></i>Social Platforms
+          </h3>
+          <div class="social-buttons-grid">
+            <a *ngFor="let social of socialLinks" 
+               [href]="social.url" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="social-btn"
+               [style.--social-color]="social.color">
+              <i class="bi bi-{{ social.icon }}"></i>
+              <span>{{ social.name }}</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Availability Banner -->
+        <div class="availability-banner" data-aos="fade-right" data-aos-delay="200">
+          <div class="status-pulse"></div>
+          <div class="availability-content">
+            <h4 class="availability-title">Available for Work</h4>
+            <p class="availability-text">Open to freelance projects and collaborations worldwide</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT PANEL - Contact Form -->
+      <div class="col-lg-7">
+        <div class="form-panel" data-aos="fade-left">
+          
+          <!-- Form Header -->
+          <div class="form-header">
+            <i class="bi bi-envelope-paper form-header-icon"></i>
+            <h3 class="form-title">Send a Message</h3>
+            <p class="form-subtitle">Fill out the form below and I'll get back to you within 24 hours</p>
+          </div>
+
+          <!-- Alert Messages -->
+          <div class="alert-container">
+            <div class="custom-alert success" *ngIf="submitSuccess">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Success!</strong> Your message has been sent. I'll respond shortly.
+              </div>
+            </div>
+
+            <div class="custom-alert error" *ngIf="submitError">
+              <i class="bi bi-x-circle-fill"></i>
+              <div>
+                <strong>Error!</strong> Failed to send message. Please try again or email directly.
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="modern-form">
+            
+            <!-- Name & Email Row -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name" class="floating-label">
+                  <i class="bi bi-person"></i> Full Name *
+                </label>
+                <input 
+                  type="text" 
+                  class="form-input" 
+                  id="name" 
+                  name="name" 
+                  [(ngModel)]="formData.name" 
+                  required
+                  minlength="2" 
+                  placeholder="John Doe" 
+                  [class.error]="validationErrors.name">
+                <div class="error-message" *ngIf="validationErrors.name">
+                  {{ validationErrors.name }}
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="floating-label">
+                  <i class="bi bi-envelope"></i> Email Address *
+                </label>
+                <input 
+                  type="email" 
+                  class="form-input" 
+                  id="email" 
+                  name="email" 
+                  [(ngModel)]="formData.email" 
+                  required
+                  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" 
+                  placeholder="john@example.com"
+                  (blur)="validateEmailOnBlur()" 
+                  [class.error]="validationErrors.email">
+                <div class="error-message" *ngIf="validationErrors.email">
+                  {{ validationErrors.email }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Subject Field -->
+            <div class="form-group">
+              <label for="subject" class="floating-label">
+                <i class="bi bi-chat-left-text"></i> Subject *
+              </label>
+              <input 
+                type="text" 
+                class="form-input" 
+                id="subject" 
+                name="subject" 
+                [(ngModel)]="formData.subject"
+                required 
+                minlength="3" 
+                placeholder="Project Discussion / Collaboration / Question"
+                [class.error]="validationErrors.subject">
+              <div class="error-message" *ngIf="validationErrors.subject">
+                {{ validationErrors.subject }}
+              </div>
+            </div>
+
+            <!-- Message Field -->
+            <div class="form-group">
+              <label for="message" class="floating-label">
+                <i class="bi bi-pencil-square"></i> Your Message *
+              </label>
+              <textarea 
+                class="form-input" 
+                id="message" 
+                name="message" 
+                [(ngModel)]="formData.message" 
+                required
+                minlength="10" 
+                rows="6" 
+                placeholder="Tell me about your project or inquiry..."
+                [class.error]="validationErrors.message"></textarea>
+              <div class="error-message" *ngIf="validationErrors.message">
+                {{ validationErrors.message }}
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn" [disabled]="isSubmitting">
+              <span *ngIf="!isSubmitting">
+                <i class="bi bi-send-fill me-2"></i>Send Message
+              </span>
+              <span *ngIf="isSubmitting">
+                <span class="btn-spinner"></span>
+                Sending...
+              </span>
+            </button>
+
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Location Feature Card -->
+    <div class="location-feature" data-aos="fade-up">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <div class="location-content">
+            <div class="location-badge">
+              <i class="bi bi-geo-alt-fill"></i>
+            </div>
+            <h3 class="location-title">Based in Udaipur, Rajasthan</h3>
+            <p class="location-text">
+              Working remotely across India and globally. Available for both remote projects and on-site 
+              opportunities. Let's collaborate regardless of geographical boundaries.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="location-illustration">
+            <i class="bi bi-globe2"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

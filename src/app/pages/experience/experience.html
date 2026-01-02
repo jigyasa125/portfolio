@@ -1,0 +1,148 @@
+<section class="experience-section">
+  <div class="container py-5">
+    
+    <!-- Animated Header -->
+    <div class="section-header text-center mb-5" data-aos="fade-down">
+      <span class="section-badge">Career Path</span>
+      <h1 class="section-title">Professional Journey</h1>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">My growth and achievements in the tech industry</p>
+    </div>
+
+    <!-- Stats Ribbon - Horizontal -->
+    <div class="stats-ribbon mb-5" data-aos="fade-up">
+      <div class="stat-item" *ngFor="let stat of stats; let i = index" 
+           [attr.data-aos]="'zoom-in'" 
+           [attr.data-aos-delay]="i * 100">
+        <div class="stat-icon-bg" [style.background]="stat.color">
+          <i class="bi bi-{{ stat.icon }}"></i>
+        </div>
+        <div class="stat-content">
+          <h3 class="stat-number">{{ stat.value }}</h3>
+          <p class="stat-label">{{ stat.label }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Journey Progress Bar -->
+    <div class="journey-progress mb-5" data-aos="fade-right">
+      <div class="progress-track">
+        <div class="progress-fill"></div>
+        <div class="progress-dots">
+          <div class="progress-dot" *ngFor="let exp of experiences; let i = index"
+               [class.active]="i === 0"
+               [style.left.%]="(i / (experiences.length - 1)) * 100">
+            <div class="dot-pulse"></div>
+          </div>
+        </div>
+      </div>
+      <div class="progress-label">
+        <span class="label-start">Started</span>
+        <span class="label-end">Present</span>
+      </div>
+    </div>
+
+    <!-- Experience Cards - Vertical Stack -->
+    <div class="experience-stack">
+      
+      <div class="exp-card-wrapper" *ngFor="let exp of experiences; let i = index"
+           [attr.data-aos]="i % 2 === 0 ? 'fade-right' : 'fade-left'"
+           [attr.data-aos-delay]="i * 100">
+        
+        <div class="exp-card" [class.current]="exp.current">
+          
+          <!-- Card Header with Large Icon -->
+          <div class="exp-header">
+            <div class="exp-icon-large">
+              <i class="bi" [ngClass]="{
+                'bi-briefcase-fill': exp.type === 'work',
+                'bi-book-fill': exp.type === 'training'
+              }"></i>
+            </div>
+            
+            <div class="exp-header-content">
+              <div class="exp-meta">
+                <span class="exp-badge" [ngClass]="{
+                  'badge-current': exp.current,
+                  'badge-work': !exp.current && exp.type === 'work',
+                  'badge-training': exp.type === 'training'
+                }">
+                  <i class="bi" [ngClass]="{
+                    'bi-clock-fill': exp.current,
+                    'bi-calendar-check-fill': !exp.current
+                  }"></i>
+                  {{ exp.current ? 'Current Position' : exp.duration }}
+                </span>
+                <span class="exp-location" *ngIf="exp.location">
+                  <i class="bi bi-geo-alt-fill"></i>{{ exp.location }}
+                </span>
+              </div>
+              
+              <h3 class="exp-position">{{ exp.position }}</h3>
+              <h4 class="exp-company">
+                <i class="bi bi-building-fill"></i>{{ exp.company }}
+              </h4>
+            </div>
+          </div>
+
+          <!-- Card Body -->
+          <div class="exp-body">
+            
+            <!-- Achievements List -->
+            <div class="achievements-section">
+              <h5 class="section-subtitle-small">
+                <i class="bi bi-trophy-fill me-2"></i>Key Achievements
+              </h5>
+              <div class="achievement-grid">
+                <div class="achievement-item" *ngFor="let desc of exp.description">
+                  <div class="achievement-bullet"></div>
+                  <p class="achievement-text">{{ desc }}</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tech Stack Pills -->
+            <div class="tech-section">
+              <h5 class="section-subtitle-small">
+                <i class="bi bi-stack me-2"></i>Tech Stack
+              </h5>
+              <div class="tech-pills">
+                <span class="tech-pill" *ngFor="let tech of exp.technologies">
+                  <i class="bi bi-check-circle-fill"></i>
+                  {{ tech }}
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA Section - Different Style -->
+    <div class="cta-section" data-aos="zoom-in">
+      <div class="cta-content">
+        <div class="cta-icon-wrapper">
+          <i class="bi bi-rocket-takeoff-fill"></i>
+        </div>
+        <div class="cta-text">
+          <h3 class="cta-title">Ready to Build Something Amazing?</h3>
+          <p class="cta-description">
+            Let's collaborate and create exceptional digital experiences together
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a href="/contact" class="cta-btn primary">
+            <i class="bi bi-send-fill me-2"></i>Start a Conversation
+          </a>
+          <a href="/projects" class="cta-btn secondary">
+            <i class="bi bi-eye-fill me-2"></i>View My Work
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

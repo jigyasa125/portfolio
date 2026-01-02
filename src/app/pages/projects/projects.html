@@ -1,0 +1,159 @@
+<section class="projects-section">
+  <div class="container py-5">
+    
+    <!-- Animated Header -->
+    <div class="section-header text-center mb-5" data-aos="fade-down">
+      <span class="section-badge">Portfolio Showcase</span>
+      <h1 class="section-title">Featured Projects</h1>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Enterprise applications & creative solutions delivered with excellence</p>
+    </div>
+
+    <!-- Pill Category Filter -->
+    <div class="filter-pills mb-5" data-aos="fade-up">
+      <button 
+        *ngFor="let category of categories"
+        (click)="selectCategory(category)"
+        [class.active]="selectedCategory === category"
+        class="pill-btn">
+        <i class="bi bi-check-circle-fill me-2" *ngIf="selectedCategory === category"></i>
+        {{ category }}
+      </button>
+    </div>
+
+    <!-- Compact Projects Grid -->
+    <div class="projects-masonry">
+      
+      <div class="project-item" *ngFor="let project of filteredProjects; let i = index"
+           [attr.data-aos]="i % 2 === 0 ? 'fade-up' : 'fade-down'"
+           [attr.data-aos-delay]="(i % 4) * 100">
+        
+        <div class="project-compact-card">
+          
+          <!-- Minimal Header -->
+          <div class="card-header-minimal">
+            <div class="header-top">
+              <div class="category-tag" [style.background]="project.gradient">
+                {{ project.category }}
+              </div>
+              <span class="company-label" *ngIf="project.isPrivate">
+                <i class="bi bi-shield-fill-check"></i>
+              </span>
+            </div>
+            
+            <h3 class="project-name">{{ project.title }}</h3>
+            <p class="project-brief">{{ project.description }}</p>
+          </div>
+
+          <!-- Expandable Content -->
+          <div class="card-content">
+            
+            <!-- Highlights -->
+            <div class="highlights-section">
+              <h5 class="content-label">
+                <i class="bi bi-lightning-charge-fill me-2"></i>Highlights
+              </h5>
+              <div class="highlights-compact">
+                <div class="highlight-pill" *ngFor="let feature of project.features.slice(0, 3)">
+                  <i class="bi bi-dot"></i>
+                  <span>{{ feature }}</span>
+                </div>
+                <div class="more-badge" *ngIf="project.features.length > 3">
+                  +{{ project.features.length - 3 }} more
+                </div>
+              </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="tech-stack-section">
+              <h5 class="content-label">
+                <i class="bi bi-layers-fill me-2"></i>Stack
+              </h5>
+              <div class="tech-compact">
+                <span class="tech-mini" *ngFor="let tech of project.technologies">
+                  {{ tech }}
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Action Footer -->
+          <div class="card-footer-action">
+            <button 
+              *ngIf="hasDemoUrl(project)"
+              class="action-btn primary"
+              (click)="openDemo(project.demoUrl)">
+              <i class="bi bi-rocket-takeoff-fill me-2"></i>
+              Launch Demo
+            </button>
+            
+            <div class="footer-meta" *ngIf="project.isPrivate">
+              <i class="bi bi-lock-fill"></i>
+              <span>Proprietary Code</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- No Projects -->
+    <div class="empty-state" *ngIf="filteredProjects.length === 0" data-aos="fade-up">
+      <i class="bi bi-folder2-open"></i>
+      <h3>No Projects Found</h3>
+      <p>Try selecting a different category</p>
+    </div>
+
+    <!-- Impact Stats Banner -->
+    <div class="impact-banner" data-aos="zoom-in">
+      <h3 class="banner-title">Project Impact</h3>
+      <div class="impact-grid">
+        <div class="impact-stat">
+          <div class="impact-value">6+</div>
+          <div class="impact-label">Projects Delivered</div>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-value">2</div>
+          <div class="impact-label">Companies Served</div>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-value">40%</div>
+          <div class="impact-label">Avg Performance Boost</div>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-value">100%</div>
+          <div class="impact-label">Success Rate</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <div class="cta-banner" data-aos="fade-up">
+      <div class="cta-grid">
+        <div class="cta-content">
+          <div class="cta-badge">
+            <i class="bi bi-stars"></i>
+          </div>
+          <h3 class="cta-heading">Let's Build Together</h3>
+          <p class="cta-text">
+            Ready to bring your vision to life? I specialize in creating scalable, 
+            performant applications that exceed expectations.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a href="/contact" class="cta-action-btn primary">
+            <i class="bi bi-envelope-fill"></i>
+            <span>Start a Project</span>
+          </a>
+          <button class="cta-action-btn secondary" (click)="downloadResume()">
+            <i class="bi bi-file-text"></i>
+            <span>Get Resume</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

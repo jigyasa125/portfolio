@@ -1,0 +1,174 @@
+<section class="skills-section">
+  <div class="container py-5">
+    
+    <!-- Animated Header -->
+    <div class="section-header text-center mb-5" data-aos="fade-down">
+      <span class="section-badge">Technical Arsenal</span>
+      <h1 class="section-title">Skills & Expertise</h1>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Mastering modern technologies to build exceptional digital experiences</p>
+    </div>
+
+    <!-- Overall Proficiency Banner -->
+    <div class="proficiency-banner" data-aos="zoom-in">
+      <div class="proficiency-content">
+        <div class="prof-icon">
+          <i class="bi bi-graph-up-arrow"></i>
+        </div>
+        <div class="prof-text">
+          <h3 class="prof-title">Overall Proficiency</h3>
+          <p class="prof-desc">2+ years of hands-on experience across the full stack</p>
+        </div>
+        <div class="prof-meter">
+          <div class="meter-value">85%</div>
+          <div class="meter-label">Expert Level</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="skill-tabs" data-aos="fade-up">
+      <button 
+        *ngFor="let category of skillCategories; let i = index"
+        (click)="selectTab(i)"
+        [class.active]="activeTab === i"
+        class="tab-btn">
+        <i class="bi bi-{{ category.icon }}"></i>
+        <span>{{ category.title }}</span>
+      </button>
+    </div>
+
+    <!-- Tab Content - Hexagon Grid -->
+    <div class="tab-content-wrapper" data-aos="fade-up" data-aos-delay="200">
+      <div class="hexagon-grid" *ngIf="skillCategories[activeTab]">
+        <div class="hex-skill" *ngFor="let skill of skillCategories[activeTab].skills">
+          <div class="hexagon" [attr.data-level]="skill.level">
+            <div class="hex-inner">
+              <div class="skill-emoji">{{ skill.icon }}</div>
+              <div class="skill-label">{{ skill.name }}</div>
+              <div class="skill-level">{{ skill.level }}%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Programming Languages - Orbital Display -->
+    <div class="languages-section" data-aos="fade-up">
+      <h3 class="subsection-title">
+        <i class="bi bi-code-slash me-2"></i>Programming Languages
+      </h3>
+      
+      <div class="orbital-container">
+        <div class="orbital-center">
+          <i class="bi bi-cpu-fill"></i>
+          <span>Core Stack</span>
+        </div>
+        
+        <div class="orbital-ring" *ngFor="let lang of programmingLanguages; let i = index">
+          <div class="orbital-skill" 
+               [style.--orbit-delay]="i * 0.5 + 's'"
+               [style.--orbit-color]="lang.color">
+            <div class="orbital-content">
+              <div class="lang-name">{{ lang.name }}</div>
+              <div class="lang-proficiency">
+                <svg class="mini-circle" width="60" height="60">
+                  <circle
+                    class="circle-bg"
+                    stroke="rgba(255,255,255,0.1)"
+                    stroke-width="4"
+                    fill="transparent"
+                    r="26"
+                    cx="30"
+                    cy="30"
+                  />
+                  <circle
+                    class="circle-fill"
+                    [attr.stroke]="lang.color"
+                    stroke-width="4"
+                    fill="transparent"
+                    r="26"
+                    cx="30"
+                    cy="30"
+                    [style.strokeDasharray]="2 * 3.14159 * 26"
+                    [style.strokeDashoffset]="2 * 3.14159 * 26 * (1 - lang.level / 100)"
+                  />
+                </svg>
+                <div class="mini-percent">{{ lang.level }}%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Achievements - Horizontal Cards -->
+    <div class="achievements-section" data-aos="fade-up">
+      <h3 class="subsection-title">
+        <i class="bi bi-trophy-fill me-2"></i>Key Achievements
+      </h3>
+      
+      <div class="achievements-scroll">
+        <div class="achievement-horizontal" *ngFor="let achievement of achievements">
+          <div class="ach-number">
+            <i class="bi bi-{{ achievement.icon }}"></i>
+          </div>
+          <div class="ach-content">
+            <h4 class="ach-title">{{ achievement.title }}</h4>
+            <p class="ach-desc">{{ achievement.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education Badge -->
+    <div class="education-badge-section" data-aos="zoom-in">
+      <div class="edu-badge-card">
+        <div class="badge-seal">
+          <div class="seal-outer">
+            <div class="seal-inner">
+              <i class="bi bi-mortarboard-fill"></i>
+            </div>
+          </div>
+        </div>
+        <div class="badge-info">
+          <h3 class="badge-degree">Bachelor of Technology (B.Tech)</h3>
+          <p class="badge-institution">
+            <i class="bi bi-building-fill me-2"></i>Aravali Institute of Technical Studies
+          </p>
+          <div class="badge-meta">
+            <span class="meta-item">
+              <i class="bi bi-calendar-check-fill me-1"></i>August 2020 - July 2023
+            </span>
+            <span class="meta-item">
+              <i class="bi bi-award-fill me-1"></i>Technical Education
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Diploma -->
+      <div class="edu-badge-card secondary">
+        <div class="badge-seal">
+          <div class="seal-outer">
+            <div class="seal-inner">
+              <i class="bi bi-patch-check-fill"></i>
+            </div>
+          </div>
+        </div>
+        <div class="badge-info">
+          <h3 class="badge-degree">Diploma in Engineering</h3>
+          <p class="badge-institution">
+            <i class="bi bi-building-fill me-2"></i>Vidhya Bhawan Polytechnic College
+          </p>
+          <div class="badge-meta">
+            <span class="meta-item">
+              <i class="bi bi-calendar-check-fill me-1"></i>August 2017 - July 2020
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

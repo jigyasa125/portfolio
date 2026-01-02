@@ -1,0 +1,203 @@
+<section class="hero-section">
+  
+  <!-- Animated Background Particles -->
+  <div class="particles-bg">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <div class="container">
+    
+    <!-- Centered Hero Content -->
+    <div class="hero-wrapper">
+      
+      <!-- Profile Avatar - Centered Top -->
+      <div class="hero-avatar" data-aos="zoom-in">
+        <div class="avatar-glow"></div>
+        <div class="avatar-circle">
+          <div class="avatar-inner">
+            <span class="initials"><img src="professional.jpg"></span>
+          </div>
+        </div>
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          Available for Work
+        </div>
+      </div>
+
+      <!-- Hero Text - Centered -->
+      <div class="hero-text" data-aos="fade-up" data-aos-delay="200">
+        <p class="hero-greeting">
+          <i class="bi bi-hand-thumbs-up-fill"></i> Hello, I'm
+        </p>
+        <h1 class="hero-name">Jigyasa Gohil</h1>
+        <div class="hero-roles">
+          <span class="role-label">I'm a</span>
+          <h2 class="hero-role">
+            <span class="typing-text">{{ currentRole }}</span>
+          </h2>
+        </div>
+        <p class="hero-description">
+          Crafting elegant, high-performance web experiences with <strong>2+ years</strong> 
+          of expertise in Angular, TypeScript, and modern frontend technologies. 
+          Passionate about transforming ideas into beautiful digital solutions.
+        </p>
+      </div>
+
+      <!-- CTA Buttons - Centered -->
+      <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
+        <a (click)="downloadResume()" class="cta-btn primary" style="cursor: pointer;">
+          <i class="bi bi-file-earmark-arrow-down-fill"></i>
+          <span>Download Resume</span>
+        </a>
+        <a routerLink="/contact" class="cta-btn secondary">
+          <i class="bi bi-chat-dots-fill"></i>
+          <span>Let's Talk</span>
+        </a>
+      </div>
+
+      <!-- Social Links - Horizontal Pills -->
+      <div class="social-pills" data-aos="fade-up" data-aos-delay="600">
+        <a href="https://github.com/jigyasa125" target="_blank" class="social-pill">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jigyasa-gohil" target="_blank" class="social-pill">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="mailto:jigyasagohil101@gmail.com" class="social-pill">
+          <i class="bi bi-envelope-fill"></i>
+        </a>
+        <a href="tel:+918302760220" class="social-pill">
+          <i class="bi bi-telephone-fill"></i>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Bento Grid - Stats & Features -->
+    <div class="bento-grid" data-aos="fade-up" data-aos-delay="800">
+      
+      <!-- Large Feature Card -->
+      <div class="bento-card featured">
+        <div class="card-icon">
+          <i class="bi bi-stars"></i>
+        </div>
+        <h3 class="card-title">Expertise</h3>
+        <p class="card-description">
+          Specialized in building scalable Angular applications with modern UI/UX design principles
+        </p>
+        <div class="card-tags">
+          <span class="tag">Angular</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">UI/UX</span>
+        </div>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="bento-card stat-card">
+        <div class="stat-icon">
+          <i class="bi bi-briefcase-fill"></i>
+        </div>
+        <h3 class="stat-value">2+</h3>
+        <p class="stat-label">Years Experience</p>
+      </div>
+
+      <div class="bento-card stat-card">
+        <div class="stat-icon">
+          <i class="bi bi-folder-fill"></i>
+        </div>
+        <h3 class="stat-value">6+</h3>
+        <p class="stat-label">Projects Delivered</p>
+      </div>
+
+      <div class="bento-card stat-card">
+        <div class="stat-icon">
+          <i class="bi bi-code-square"></i>
+        </div>
+        <h3 class="stat-value">10+</h3>
+        <p class="stat-label">Technologies</p>
+      </div>
+
+      <!-- Achievement Card -->
+      <div class="bento-card achievement-card">
+        <div class="achievement-badge">
+          <i class="bi bi-trophy-fill"></i>
+        </div>
+        <h3 class="achievement-title">Performance Expert</h3>
+        <p class="achievement-desc">40% faster load times & 45% bug reduction</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Scroll Indicator - Modern -->
+  <div class="scroll-hint" data-aos="fade-up" data-aos-delay="1000">
+    <div class="scroll-line"></div>
+    <p class="scroll-text">Scroll to explore</p>
+  </div>
+
+</section>
+
+<!-- Quick Links Section - Horizontal Cards -->
+<section class="quick-links-section">
+  <div class="container">
+    
+    <div class="section-header" data-aos="fade-down">
+      <h2 class="section-title">What I Do</h2>
+      <p class="section-subtitle">Explore my work and skills</p>
+    </div>
+
+    <div class="quick-links-grid">
+      
+      <a routerLink="/about" class="quick-link-card" data-aos="flip-left" data-aos-delay="100">
+        <div class="ql-icon">
+          <i class="bi bi-person-circle"></i>
+        </div>
+        <h3 class="ql-title">About Me</h3>
+        <p class="ql-description">Learn about my journey, education, and passion for development</p>
+        <div class="ql-arrow">
+          <i class="bi bi-arrow-right"></i>
+        </div>
+      </a>
+
+      <a routerLink="/skills" class="quick-link-card" data-aos="flip-left" data-aos-delay="200">
+        <div class="ql-icon">
+          <i class="bi bi-gear-fill"></i>
+        </div>
+        <h3 class="ql-title">Skills</h3>
+        <p class="ql-description">Explore my technical skills and expertise in modern technologies</p>
+        <div class="ql-arrow">
+          <i class="bi bi-arrow-right"></i>
+        </div>
+      </a>
+
+      <a routerLink="/projects" class="quick-link-card" data-aos="flip-left" data-aos-delay="300">
+        <div class="ql-icon">
+          <i class="bi bi-rocket-takeoff-fill"></i>
+        </div>
+        <h3 class="ql-title">Projects</h3>
+        <p class="ql-description">View my portfolio of enterprise applications and creative solutions</p>
+        <div class="ql-arrow">
+          <i class="bi bi-arrow-right"></i>
+        </div>
+      </a>
+
+      <a routerLink="/experience" class="quick-link-card" data-aos="flip-left" data-aos-delay="400">
+        <div class="ql-icon">
+          <i class="bi bi-award-fill"></i>
+        </div>
+        <h3 class="ql-title">Experience</h3>
+        <p class="ql-description">Discover my professional journey and key achievements</p>
+        <div class="ql-arrow">
+          <i class="bi bi-arrow-right"></i>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+</section>
