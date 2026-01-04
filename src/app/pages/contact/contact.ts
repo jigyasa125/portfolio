@@ -19,9 +19,9 @@ interface ContactForm {
 })
 export class Contact {
   // ⚠️ NOTE: Jigyasa ko apne EmailJS IDs update karni hongi
-  private serviceID = 'service_60dmj5f';      
-  private templateID = 'template_jnq1zoe';    
-  private publicKey = 'UWvUlxGwq16NXcyf8';    
+  private serviceID = 'service_cc27v6g';      
+  private templateID = 'template_b7xm1nr';    
+  private publicKey = 'IxqkV5FRYP22Bb6Fk';    
 
   contactInfo = [
     {
