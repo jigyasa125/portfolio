@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jigyasa Gohil - Frontend Developer Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            font-size: 10pt;
+            line-height: 1.2;
+            color: #2d2d2d;
+            background: #ffffff;
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            margin-bottom: 8px;
+            padding-bottom: 6px;
+            border-bottom: 2.5px solid #2c2d34;
+            padding-top: 4px;
+        }
+
+        h1 {
+            font-size: 20pt;
+            color: #000;
+            margin-bottom: 4px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            font-size: 10pt;
+            flex-wrap: wrap;
+            column-gap: 8px;
+            row-gap: 2px;
+        }
+
+
+        .break {
+            flex-basis: 100%;
+            height: 0;
+        }
+
+        .contact-info a {
+            color: #7c2d12;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: #7c2d12;
+        }
+
+        .contact-info i {
+            margin-right: 3px;
+        }
+
+        .contact-info .fa-phone {
+            color: #10b981;
+        }
+
+        .contact-info .fa-envelope {
+            color: #f59e0b;
+        }
+
+        .contact-info .fa-linkedin {
+            color: #0077b5;
+        }
+
+        .contact-info .fa-github {
+            color: #333;
+        }
+
+        .contact-info .fa-globe {
+            color: #06b6d4;
+        }
+
+        .contact-info .fa-location-dot {
+            color: #ef4444;
+        }
+
+        .contact-info span {
+            color: #000;
+            font-weight: 500;
+        }
+
+        /* SUMMARY */
+        .summary {
+            background-color: #f8f9fa;
+            padding: 6px 10px;
+            margin-bottom: 6px;
+            border-left: 3px solid #7c2d12;
+        }
+
+        .summary p {
+            font-size: 10pt;
+            color: #444;
+            line-height: 1.3;
+        }
+
+        .summary p strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 11pt;
+            color: #7c2d12;
+            margin-bottom: 4px;
+            padding-bottom: 2px;
+            border-bottom: 1.5px solid #7c2d12;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3px;
+        }
+
+        .skill-category {
+            padding: 2px 0;
+        }
+
+        .skill-category strong {
+            font-size: 9.5pt;
+            font-weight: 700;
+        }
+
+        .skill-category span {
+            font-size: 9.5pt;
+            color: #000;
+        }
+
+        /* EXPERIENCE / PROJECTS */
+        .experience-item,
+        .project-item,
+        .education-item {
+            margin-bottom: 6px;
+        }
+
+        .job-header,
+        .project-header,
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .job-title,
+        .project-title,
+        .degree {
+            font-size: 10pt;
+            font-weight: 700;
+
+        }
+
+        .company,
+        .project-tech,
+        .institution {
+            font-size: 9pt;
+            color: #000;
+            font-style: italic;
+        }
+
+        .project-title-line {
+            display: inline-flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .project-tech {
+            color: #9b4629db !important;
+            font-size: 8.5pt !important;
+        }
+
+        .date {
+            font-size: 9pt;
+            color: #000;
+            white-space: nowrap;
+            font-weight: 600;
+        }
+
+        .project-link {
+            font-size: 8.5pt;
+            color: #9b4629db;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+
+        /* BULLETS */
+        ul {
+            margin-left: 16px;
+            margin-top: 2px;
+        }
+
+        li {
+            font-size: 9pt;
+            color: #000;
+            margin-bottom: 2px;
+            line-height: 1.3;
+        }
+
+        li strong {
+            font-weight: 600;
+        }
+
+        @media print {
+            body {
+                padding: 10mm 12mm;
+            }
+
+            section,
+            .experience-item,
+            .project-item {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Jigyasa Gohil</h1>
+        <div class="contact-info">
+            <span><i class="fas fa-phone"></i>+91 8302760220</span>
+            <span>|</span>
+            <a style="color: #000;" href="mailto:jigyasagohil101@gmail.com">
+                <i class="fas fa-envelope"></i>jigyasagohil101@gmail.com
+            </a>
+            <span>|</span>
+            <span><i class="fa-solid fa-location-dot"></i>Udaipur, Rajasthan</span>
+            <div class="break"></div>
+            <a href="https://linkedin.com/in/jigyasa-gohil" target="_blank">
+                <i class="fab fa-linkedin"></i>linkedin.com/in/jigyasa-gohil
+            </a>
+            <span>|</span>
+            <a href="https://github.com/jigyasa125" target="_blank">
+                <i class="fab fa-github"></i>github.com/jigyasa125
+            </a>
+            <span>|</span>
+            <a href="https://jigyasagohil.vercel.app/" target="_blank">
+                <i class="fa-solid fa-globe"></i>jigyasagohil.vercel.app
+            </a>
+        </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="summary">
+        <p>
+            Results-driven <strong>Frontend Developer</strong> with <strong>2+ years</strong> of experience building
+            scalable, high-performance web applications using <strong>Angular, TypeScript,</strong> and modern frontend
+            architectures. Proven expertise in <strong>enterprise-level UI development, REST API integration, role-based
+                access control (RBAC),</strong> and performance optimization. Adept at translating business requirements
+            into
+            intuitive, user-centric interfaces while collaborating closely with backend and product teams.
+        </p>
+
+    </section>
+
+
+    <!-- Skills Section -->
+    <section>
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <strong>Languages:</strong>
+                <span>TypeScript, JavaScript, HTML5, CSS3</span>
+            </div>
+            <div class="skill-category">
+                <strong>Frameworks & Libraries:</strong>
+                <span>Angular (10+), Bootstrap, RxJS, Angular Material, Reactive Forms</span>
+            </div>
+            <div class="skill-category">
+                <strong>UI/UX & Styling:</strong>
+                <span>SCSS, Responsive Design, Material Design</span>
+            </div>
+            <div class="skill-category">
+                <strong>Frontend Concepts:</strong>
+                <span>Component Architecture, Lazy Loading, State Management, REST API Integration</span>
+            </div>
+            <div class="skill-category">
+                <strong>Developer Tools:</strong>
+                <span>Git, GitHub, Postman, Chrome DevTools</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section>
+        <h2>Professional Experience</h2>
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Frontend Developer</div>
+                    <div class="company">SANGLOB BUSINESS SERVICES PRIVATE LIMITED</div>
+                </div>
+                <div class="date">July 2025 – Present</div>
+            </div>
+            <ul>
+                <li>Architected and developed <strong>MACK (Managing Content & Knowledge)</strong> enterprise platform
+                    with <strong>4 core modules</strong> (Invoice, Quotation, Purchase Order, Requisition) streamlining
+                    end-to-end procurement workflows</li>
+                <li>Engineered automated document generation system integrating <strong>150+ REST APIs,</strong>
+                    reducing manual processing time by 40%</li>
+                <li>Implemented comprehensive <strong>role-based access control (RBAC)</strong> system with dynamic
+                    permission management</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Frontend Developer</div>
+                    <div class="company">CrocoCode Pvt Ltd</div>
+                </div>
+                <div class="date">Oct 2023 – April 2025</div>
+            </div>
+            <ul>
+                <li>Engineered <strong>responsive Angular applications</strong> achieving <strong>flawless cross-device
+                        performance</strong></li>
+                <li>Designed <strong>dynamic UI animations,</strong> boosting user engagement by <strong>30%</strong>
+                </li>
+                <li>Improved application performance by <strong>40%</strong> using <strong>lazy loading</strong> and
+                    <strong>code optimization</strong> techniques
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section>
+        <h2>Projects</h2>
+
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title-line">
+                    <div class="project-title">MACK (Managing Content & Knowledge)</div>
+                    <div class="project-tech">Angular, TypeScript, Material UI, REST APIs</div>
+                </div>
+                <div class="date">2025</div>
+            </div>
+            <ul>
+                <li>Architected <strong>MACK enterprise platform</strong> with <strong>4 core modules</strong> (Invoice,
+                    Quotation, Purchase Order, Requisition) featuring <strong>responsive data tables</strong> with
+                    advanced filtering, sorting, and pagination for efficient workflow management</li>
+                <li>Engineered automated document generation system integrating <strong>150+ REST APIs</strong> and
+                    implemented <strong>role-based access control (RBAC)</strong> with dynamic permissions, reducing
+                    manual processing by <strong>40%</strong></li>
+            </ul>
+        </div>
+
+        <!-- <div class="project-item">
+            <div class="project-header">
+                <div class="project-title-line">
+                    <div class="project-title">KITE CULTURES</div>
+                    <div class="project-tech">Angular, HTML, SCSS, Responsive Design, Firebase</div>
+                </div>
+                <div class="date">2025 <a href="https://kitecultures.in/home" class="project-link" target="_blank">View Project</a></div>
+            </div>
+            <ul>
+                <li><strong>Interactive digital content platform</strong> with blogs, events, social media integration,
+                    and <strong>mobile-friendly interface</strong></li>
+                <li>Developed <strong>dynamic content management system</strong> with Firebase backend for real-time
+                    updates and content publishing</li>
+                <li>Designed <strong>custom SCSS themes</strong> and implemented smooth animations to enhance user
+                    experience</li>
+            </ul>
+        </div> -->
+
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title-line">
+                    <div class="project-title">VIGORBOOKS</div>
+                    <div class="project-tech">Angular, TypeScript, REST APIs, Bootstrap, RxJS</div>
+                </div>
+                <div class="date">2025 <a href="https://app.vigorbooks.com/#/auth/login" class="project-link"
+                        target="_blank">View Project</a></div>
+            </div>
+            <ul>
+                <li>Engineered a <strong>comprehensive financial management platform</strong> with <strong>automated GST
+                        calculations</strong>, <strong>intelligent transaction management</strong>, and
+                    <strong>real-time financial data tracking</strong>, streamlining accounting workflows and reducing
+                    manual effort by <strong>35%</strong></li>
+                <li>Built <strong>interactive financial dashboards</strong> with <strong>dynamic data
+                        visualization</strong> and integrated <strong>automated PDF generation</strong> for
+                    <strong>invoices, receipts, and comprehensive reports</strong> with <strong>customizable
+                        templates</strong> and multi-format export capabilities</li>
+            </ul>
+        </div>
+
+        <!-- <div class="project-item">
+            <div class="project-header">
+                <div class="project-title-line">
+                    <div class="project-title">LOTAPP</div>
+                    <div class="project-tech">Angular, TypeScript, Angular Material</div>
+                </div>
+                <div class="date">2024 <a href="https://app.unlikeanything.nl/" class="project-link"
+                        target="_blank">View Project</a></div>
+            </div>
+            <ul>
+                <li><strong>E-commerce product management platform</strong> with <strong>real-time data
+                        synchronization</strong> across multiple channels</li>
+                <li>Developed <strong>inventory tracking system</strong> with automated stock alerts and bulk product
+                    operations</li>
+                <li>Built <strong>Angular Material UI components</strong> for product catalogs, order management, and
+                    customer dashboards</li>
+            </ul>
+        </div> -->
+
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title-line">
+                    <div class="project-title">MPRASS</div>
+                    <div class="project-tech">Angular, Responsive Design</div>
+                </div>
+                <div class="date">2024 <a href="https://mprass-73c98.web.app/auth/login?returnUrl=%2F"
+                        class="project-link" target="_blank">View Project</a></div>
+            </div>
+            <ul>
+                <li><strong>Cloud-based inventory management system</strong> with <strong>real-time stock updates
+                    </strong> and <strong>intelligent tracking.</strong></li>
+                <li> <strong>Developed responsive, high-performance UI</strong> improving <strong>system
+                        usability </strong>and delivering seamless user experience.</li>
+
+            </ul>
+        </div>
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title-line">
+                    <div class="project-title">CodeSpeedo</div>
+                    <div class="project-tech">Angular, TypeScript, JavaScript, CSS</div>
+                </div>
+                <div class="date">2023 <a href="https://www.codespeedo.com/" class="project-link" target="_blank">View
+                        Project</a></div>
+            </div>
+            <ul>
+                <li>Built <strong>no-code platform</strong> for Ionic & Flutter apps with <strong>drag-and-drop
+                        builder</strong> and <strong>visual component library</strong> featuring pre-built UI elements
+                    and customizable templates, increasing developer productivity by <strong>50%</strong></li>
+                <li>Implemented <strong>real-time preview</strong> feature allowing instant visualization of design
+                    changes and seamless development workflow</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section>
+        <h2>Education</h2>
+        <div class="education-item">
+            <div class="education-header">
+                <div>
+                    <div class="degree">Bachelor of Computer Science & Engineering</div>
+                    <div class="institution">Aravali Institute Of Technical Studies, Udaipur</div>
+                </div>
+                <div class="date">2020 - 2023</div>
+            </div>
+        </div>
+        <div class="education-item">
+            <div class="education-header">
+                <div>
+                    <div class="degree">Diploma - Science Stream (Computer Science)</div>
+                    <div class="institution">Vidhya Bhawan Polytechnic College</div>
+                </div>
+                <div class="date">2017 - 2020</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Certifications</h2>
+        <div class="education-item">
+            <div class="education-header">
+                <div>
+                    <div class="degree">Experience Certificate - Frontend Developer</div>
+                    <div class="institution">CrocoCode Pvt Ltd, Udaipur</div>
+                </div>
+                <div class="date">Oct 2023 - April 2025<a
+                        href="https://drive.google.com/file/d/1_j0_6GZo84oTU2PYQ85FpzmyyFVXKff5/view?usp=sharing"
+                        class="project-link" target="_blank">View</a></div>
+            </div>
+        </div>
+        <div class="education-item">
+            <div class="education-header">
+                <div>
+                    <div class="degree">Industrial Internship Training Certificate</div>
+                    <div class="institution">WebKeens Technologies, Udaipur</div>
+                </div>
+                <div class="date">May - June 2019<a
+                        href="https://drive.google.com/file/d/1QqDvJqxlToJAM5uPYA26OxCqSuhtq6w5/view?usp=sharing"
+                        class="project-link" target="_blank">View</a></div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

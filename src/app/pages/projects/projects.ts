@@ -42,11 +42,11 @@ export class Projects {
       title: 'VigorBooks',
       description: 'Financial management system for accounting and invoicing',
       features: [
-        'Automated tax calculations with real-time updates',
-        'Implemented OCR receipt scanning reducing manual accounting effort',
-        'Comprehensive financial reporting dashboard',
-        'Invoice and expense management system',
-        'Multi-currency support for global businesses'
+        'Automated GST and tax calculations with real-time updates',
+        'Comprehensive financial reporting with interactive dashboards',
+        'Invoice and expense management with customizable templates',
+        'Real-time transaction tracking and categorization',
+        'PDF generation for invoices, receipts, and financial reports'
       ],
       technologies: ['Angular', 'TypeScript', 'OCR APIs', 'Financial APIs', 'Firebase'],
       icon: 'calculator',
@@ -161,7 +161,7 @@ export class Projects {
 
   downloadResume() {
     const link = document.createElement('a');
-    link.href = 'assets/resume/Jigyasa-Gohil-Resume.pdf';
+    link.href = 'Resume.pdf';
     link.download = 'Jigyasa-Gohil-Resume.pdf';
     link.click();
   }
