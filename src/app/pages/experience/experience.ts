@@ -39,7 +39,7 @@ export class Experience {
     {
       company: 'CrocoCode Pvt Ltd',
       position: 'Frontend Developer',
-      duration: 'October 2023 - April 2025',
+      duration: 'February 2023 - April 2025',
       type: 'work',
       description: [
         'Engineered responsive Angular applications achieving flawless cross-device performance',
@@ -55,7 +55,7 @@ export class Experience {
   stats = [
     {
       icon: 'calendar-check',
-      value: '2+',
+      value: '3+',
       label: 'Years Experience',
       color: '#0ea5e9'
     },

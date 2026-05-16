@@ -21,7 +21,7 @@ export class About {
   highlights = [
     {
       icon: 'clock-history',
-      title: '2+ Years',
+      title: '3+ Years',
       description: 'Professional Experience'
     },
     {
